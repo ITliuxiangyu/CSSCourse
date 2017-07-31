@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">
+        <!--<button type="button" class="close">-->
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+        哈哈
+    </div>
+
+
+</body>
+</html>
+<script src="dist/js/jquery.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script>
+    $("[class = close]").on("click",function () {
+//        $("[class = close]").alert('close')
+    })
+</script>

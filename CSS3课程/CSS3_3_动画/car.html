@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		    * {
+		        padding: 0;
+		        margin: 0;
+		    }
+		    html, body {
+		        height: 100%;
+		    }
+		    
+		    .wrap {
+		        background: #c4f3eb;                
+		        height: 100%;
+		        position: relative;
+		        overflow: hidden;
+		    }
+		    
+		    .mountain1 {
+		        width: 800px;
+		        height: 800px;
+		        border-radius: 50px;
+		        background: #b5bebc;
+		        transform: rotate(45deg);
+		        position: absolute;
+		        bottom: -400px;
+		        left: 30%;
+		    }
+		    
+		    .hill2 {
+		        height: 200px;
+		        width: 90%;
+		        background: #34dec0;
+		        position: absolute;
+		        bottom: 0;
+		        border-top-right-radius: 100%;
+		    }
+		    .hill1 {
+		        width: 70%;
+		        height: 210px;
+		        background: #20c8aa;
+		        position: absolute;
+                bottom: 0;
+                left: 15%;
+                border-top-left-radius: 100%;
+                border-top-right-radius: 40%;
+		    }
+		    .hill3 {
+		        width: 60%;
+		        height: 251px;
+		        background: #05b596;
+		        box-shadow: inset 0 0 100px 1px white;
+		        border-top-left-radius: 100%;
+		        position: absolute;
+                bottom: 0;
+                right: 0;
+		    }
+		    
+		    .mountain2 {
+		        width: 1200px;
+		        height: 1200px;
+		        transform: rotate(45deg);
+		        position: absolute;
+		        border-radius: 50px;
+		        background: #8f9d87;
+		        bottom: -800px;
+		        left: -150px;
+		    }
+		    
+		    .sun {
+		        width: 300px;
+		        height: 300px;
+		        border-bottom-left-radius: 100%;
+		        background: gold;
+		        position: absolute;
+                right: 0;
+                box-shadow: 0 0 150px orange;
+            		        
+		    }
+		    
+		    .grass {
+		        width: 100%;
+		        height: 20px;
+		        background-image: linear-gradient(135deg, transparent 0%, transparent 30%, green 30%, green 100%);
+		        background-size: 20px 20px;
+		        position: absolute;
+		        bottom: 150px;
+                
+		    }
+		    
+		    .road {
+		        width: 100%;
+		        height: 120px;
+		        border-top: 12px solid #F8F4E8;
+		        border-bottom: 18px solid #F8F4E8;
+		        background: #45637A;
+		        position: absolute;
+                bottom: 0;
+		    }
+		    .line {
+		        width: 100%;
+		        height: 8px;
+		        background-image: repeating-linear-gradient(to right, transparent 0%, transparent 10%, white 10%, white 20%);
+		        position: absolute;
+                top: 56px;
+		    }
+		    
+		    .car {
+		        width: 100%;
+		        position: absolute;
+                bottom: 0;
+    		        height: 60px;
+		        background: url(img/che.png) no-repeat;
+		        background-size: 140px 60px;
+		        animation: run 10s linear infinite;
+		    }
+		    .car img {
+		        width: 30px;
+		        position: absolute;
+		        animation: roll 0.1s linear infinite;
+		    }
+		    .car img:first-child {
+		        left: 10px;
+		        top: 31px;
+		    }
+		    .car img:last-child {
+		        left: 100px;
+		        top: 31px;
+		    }
+		    
+		    @keyframes roll {
+		        0% {
+		            transform: rotate(0deg);
+		        }
+		        100% {
+		            transform: rotate(360deg);
+		        }
+		    }
+		    
+		    @keyframes run {
+		        
+		        0% {
+		            transform: translate(0, 0);
+		        }
+		        
+		        20% {
+		            transform: translate(20%, -100%);
+		        }
+		        
+		        40% {
+		            transform: translate(40%, 0);
+		        }
+		        60% {
+		            transform: translate(60%, -100%);
+		        }
+		        80% {
+		            transform: translate(80%, 0);
+		        }
+		        100% {
+		            transform: translate(100%, -100%);
+		        }
+		        
+		        
+		    }
+		    
+		</style>
+	</head>
+	<body>
+	    
+	    <div class="wrap">
+	        <div class="mountain1"></div>
+	        <div class="hill1"></div>
+	        <div class="hill2"></div>
+	        <div class="hill3"></div>
+	        <div class="mountain2"></div>
+	        <div class="grass"></div>
+	        <div class="sun"></div>
+	        <div class="road">
+	            <div class="line"></div>
+	            <div class="car">
+	                <img src="img/lun.png" alt="" />
+	                <img src="img/lun.png" alt="" />           
+	            </div>
+	            
+	            
+	        </div>
+	        
+	    </div>
+	    
+	</body>
+</html>

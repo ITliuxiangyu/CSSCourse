@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>背景裁切</title>
+    <style>
+        div {
+
+            width: 700px;
+            height: 500px;
+            margin: 100px auto 0;
+            border: 20px dotted #333;
+            background-image: url(img/1.jpg);
+            background-repeat: no-repeat;
+            /*background-position: -20px -20px;*/
+
+            padding: 50px;
+            /*
+               背景裁切 :
+                   border-box: 外边框以外的背景图会被裁切
+                   padding-box: padding以外的背景图会被裁切
+                   content-box: 内容以外的背景图会被裁切
+
+            */
+            /*background-clip: content-box;*/
+            /*
+                content-box: 图片左上角和内容左上角重合
+                padding-box: 图片左上角和内边框左上角重合
+                border-box: 图片左上角和外边框左上角重合
+
+              */
+            background-origin: content-box;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div>
+
+</div>
+
+
+
+</body>
+</html>

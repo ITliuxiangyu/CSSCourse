@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: dashed 30px gray;
+            margin: 50px auto;
+            background-color: aquamarine;
+            background-image: url("backImg/1.jpg");
+            background-repeat: no-repeat;
+            background-size: 300px 200px;
+            padding: 30px;
+        }
+        div:nth-child(1){
+            /*background-clip默认值为border-box*/
+            /*background-clip的真正作用是决定背景在哪些区域显示。如果它的值为border,则背景在元素的边框、补白和内容区域都会显示；如果值为padding,则背景只会在补白和内容区域显示；如果值为content，则背景只会在内容区域显示
+            background-origin的作用就是指定background-position的参照点是在边框区域的左上角，还是在补白区域的左上角，或是在内容区域的左上角*/
+            background-clip: border-box;
+            /*background-origin: border-box;*/
+        }
+        div:nth-child(2){
+            background-clip: content-box;
+            /*background-origin: content-box;*/
+        }
+        div:nth-child(3){
+            background-clip: padding-box;
+            /*background-origin: padding-box;*/
+        }
+        /*div:nth-child(1){*/
+            /*background-image: url("backImg/i2.png");*/
+            /*!*循环可以单循环*!*/
+            /*background-repeat: repeat-x,no-repeat;*/
+            /*!*position可以设置背景位置信息*!*/
+            /*background-position: bottom,center;*/
+            /*background-size: 30px;*/
+        /*}*/
+        #lastDiv{
+            margin: 50px auto;
+            width: 300px;
+            height: 300px;
+            border-color: gray;
+            border-style: solid;
+            border-width: 26px;
+            border-image-source: url("backImg/border.png");
+            /*切割图片*/
+            border-image-slice: 26;
+            border-image-repeat: repeat;
+            /*border-image-outset: 30px;*/
+        }
+    </style>
+</head>
+<body>
+<!--background-clip /content-box border-box/padding-box-->
+<!--background-origin /content-box border-box/padding-box-->
+<!--多个背景图片 先写得显示在上面-->
+    <div></div>
+    <div></div>
+    <div></div>
+<!--border-image-->
+<div id="lastDiv"></div>
+
+</body>
+</html>

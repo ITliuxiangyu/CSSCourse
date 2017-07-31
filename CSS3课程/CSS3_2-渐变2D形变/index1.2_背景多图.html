@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景多图</title>
+    <style>
+        div{
+            height: 300px;
+            width: 300px;
+            border: dashed 10px black;
+            margin: 0 auto;
+            background: url("img/bg-leftTop.png") no-repeat left top,
+                        url("img/bg-rightTop.png") no-repeat right top,
+                        url("img/bg-leftBottom.png") no-repeat left bottom,
+                        url("img/bg-rightBottom.png") no-repeat right bottom,
+                        url("img/bg-repeat.png");
+            background-clip: border-box;
+        }
+    </style>
+</head>
+<body>
+<!--1.背景可以用多张图片,他们之间用逗号隔开
+    2.他们之间是有层次的,先添加的在上面,后添加的在下面-->
+    <div></div>
+</body>
+</html>

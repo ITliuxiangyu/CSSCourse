@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        figure{
+            /*这个必须写*/
+            position: relative;
+            width: 33.33%;
+            height: 400px;
+            float: left;
+            overflow: hidden;
+        }
+        figure img{
+            opacity: 1;
+            transition: opacity 2s;
+        }
+        figure:hover img{
+            opacity: 0.5;
+        }
+        /*第一个平移图像和文字*/
+        figure:nth-child(1) img{
+            transition: transform 2s;
+        }
+        figure:nth-child(1) h1{
+            width: 200px;
+            position: absolute;
+            top: 200px;
+            left: 30px;
+            transition: transform 2s ease-in;
+        }
+        figure:nth-child(1) p{
+            width: 200px;
+            position: absolute;
+            top: 250px;
+            left: 30px;
+            transition: transform 2s ease-in;
+        }
+        figure:nth-child(1):hover h1{
+            transform: translateY(-50px);
+        }
+        figure:nth-child(1):hover p{
+            transform: translateY(-200px);
+        }
+        figure:nth-child(1):hover img{
+            transform: translateX(-50px);
+        }
+        /*第二个效果旋转*/
+        figure:nth-child(2) h1{
+            position: absolute;
+            top:300px;
+            left: 30px;
+            transition: all 1s;
+        }
+        figure:nth-child(2) div{
+            position: absolute;
+            top:10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            border: solid 3px red;
+            transform: translateY(-400px) rotate(360deg);
+            transition: transform 0.5s linear;
+        }
+        figure:nth-child(2):hover div{
+            transform: translateY(0) rotate(0deg);
+        }
+        figure:nth-child(2):hover h1{
+            transform: translateX(50px) translateY(-50px) rotate(360deg);
+            color: white;
+        }
+        /*第三个拉伸图片*/
+        figure:nth-child(3) h1{
+            position: absolute;
+            top:50%;
+            left:15%;
+            transform: skewY(90deg);
+            transition: transform 1s;
+        }
+        figure:nth-child(3) p{
+            position: absolute;
+            top:70%;
+            left:15%;
+            transform: skewY(90deg);
+            transition: transform 1s;
+        }
+        figure:nth-child(3):hover h1{
+            transform: skewY(0deg);
+        }
+        figure:nth-child(3):hover p{
+            transform: skewY(0deg);
+        }
+        figure:nth-child(4) h1{
+            position: absolute;
+            top:70%;
+            left:25%;
+
+        }
+        .lineW{
+            position: absolute;
+            top:15%;
+            left: 15%;
+            width: 70%;
+            height: 70%;
+            border: solid 2px black;
+            border-left-style: none;
+            border-right-style: none;
+            transform: scaleX(0);
+            transition: transform 1s;
+        }
+        .lineH{
+            position: absolute;
+            top:10%;
+            left: 20%;
+            width: 60%;
+            height: 80%;
+            border: solid 2px black;
+            border-top-style: none;
+            border-bottom-style: none;
+            transform: scaleY(0);
+            transition: transform 1s;
+        }
+        figure:nth-child(4):hover .lineH{
+            transform: scaleY(1);
+        }
+        figure:nth-child(4):hover .lineW{
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <figure>
+            <img src="img2/pic4.jpg" alt="">
+            <figcaption>
+                <h1>平移图片</h1>
+                <p>从右向左平移图片</p>
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="img2/pic5.jpg" alt="">
+            <figcaption>
+                <h1>旋转图片</h1>
+                <div></div>
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="img2/pic6.jpg" alt="">
+            <figcaption>
+                <h1>拉伸图片</h1>
+                <p>实现扭曲飞入飞出</p>
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="img2/pic7.jpg" alt="">
+            <figcaption>
+                <h1>缩放绘制线条</h1>
+                <div class="lineW"></div>
+                <div class="lineH"></div>
+            </figcaption>
+        </figure>
+    </div>
+
+</body>
+</html>

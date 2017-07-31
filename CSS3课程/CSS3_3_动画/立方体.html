@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        
+        @keyframes myDemo {
+            0%{
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+            100%{
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+        .cube{
+            transform-style: preserve-3d;
+            /*perspective-origin: 50% 50%;*/
+            /*perspective: 800px;*/
+            border: solid 1px white;
+            width: 400px;
+            height: 400px;
+           position: relative;
+            margin: 300px auto;
+            animation: myDemo 20s infinite linear;
+            /*transform: rotateX(45deg) rotateY(135deg);*/
+        }
+        .cube div{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,0,255, 0.5);
+            font-size: 400px;
+            line-height: 400px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+        }
+        .font{
+            transform: translateZ(200px);
+        }
+        .back{
+            transform: translateZ(-200px);
+        }
+        .top{
+            transform:rotateX(90deg) translateZ(200px);
+        }
+        .bottom{
+            transform:rotateX(90deg) translateZ(-200px);
+        }
+        .left{
+            transform:rotateY(90deg) translateZ(200px);
+        }
+        .right{
+            transform:rotateY(90deg) translateZ(-200px);
+        }
+
+        .cube:hover .font{
+            transform: translateZ(300px);
+        }
+        .cube:hover .back{
+            transform: translateZ(-300px);
+        }
+        .cube:hover .top{
+            transform:rotateX(90deg) translateZ(300px);
+        }
+        .cube:hover .bottom{
+            transform:rotateX(90deg) translateZ(-300px);
+        }
+        .cube:hover .left{
+            transform:rotateY(90deg) translateZ(300px);
+        }
+        .cube:hover .right{
+            transform:rotateY(90deg) translateZ(-300px);
+        }
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="font">I</div>
+        <div class="back">L</div>
+        <div class="top">O</div>
+        <div class="bottom">V</div>
+        <div class="left">E</div>
+        <div class="right">U</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>em和rem</title>
+    <style>
+        /*
+                em: 大小由父级决定
+                rem:大小有html字体大小决定
+                浏览器的默认字体为16px 那么1em就相当于16px
+                em计算是相对的 也就是相对于它的父视图
+                em的设置可以保留三位小数 比如1.365em
+             */
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-size: 1em;
+        }
+        div{
+            background-color: aqua;
+            width: 100px;
+            height: 100px;
+        }
+        .emDiv{
+            font-size: 10px;
+        }
+        .emDiv .in{
+            font-size: 1em;
+        }
+        .emDiv .rin{
+            font-size: 2rem;
+        }
+        #my{
+            width: 1em;
+            height: 1em;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="emDiv">
+        <div class="in">
+            hello 美女!
+        </div>
+    </div>
+    <br>
+    <div class="emDiv">
+        <div class="rin">
+            我是帅哥!
+        </div>
+    </div>
+<div id="my"></div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构类伪类选择器</title>
+    <style>
+        /*选中E元素父级的所有子元素下的第number个元素,并且元素名为E才生效*/
+        /*p:nth-child(3){*/
+            /*color: royalblue;*/
+        /*}*/
+        /*n从0开始, 一直自增, 选中E元素所在父级下的所有元素名为E的子元素*/
+        /*p:nth-child(n){*/
+            /*color: red;*/
+        /*}*/
+        /*选中E元素所在父级下面的所有偶数子元素, 并且元素的名字为E*/
+        /*p:nth-child(2n){*/
+            /*color: yellow;*/
+        /*}*/
+        /*选中奇数元素*/
+        /*p:nth-child(odd){*/
+            /*color: brown;*/
+        /*}*/
+        /*选中偶数元素*/
+        /*p:nth-child(even){*/
+            /*color: cadetblue;*/
+        /*}*/
+        /*倒着查找个nth-child类似*/
+        /*p:nth-last-child(2){*/
+            /*color: blueviolet;*/
+        /*}*/
+        /*找相同类型的E元素, 他们是所在的父级的子元素下除去其它类型元素的第number个*/
+        /*p:nth-of-type(1){*/
+            /*background-color: aquamarine;*/
+        /*}*/
+        /*p:nth-last-of-type(1){*/
+            /*background-color: sienna;*/
+        /*}*/
+        /*:root{*/
+            /*background-color: rebeccapurple;*/
+        /*}*/
+
+        /*p:empty{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*background-color: aquamarine;*/
+        /*}*/
+        /* 给p样式后再给不是p的样式*/
+        /*p {*/
+            /*color: #000000;*/
+        /*}*/
+
+        /*:not(p) {*/
+            /*color: #ff0000;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<!--
+	        结构伪类选择器:
+	           E:nth-child(number): 选中E元素父级的所有子元素下的第number个元素并且元素名为E
+	           E:nth-child(n): n从0开始, 一直自增, 选中E元素所在父级下的所有元素名为E的子元素
+	           E:nth-child(2n): 选中E元素所在父级下面的所有偶数子元素, 并且元素的名字为E
+	           E:nth-child(2n+1): 奇数
+	           E:nth-child(-n+num): 选中前num个元素
+	           E:nth-child(n+num): 不选中num以前的元素
+	           E:nth-child(odd): 奇数
+	           E:nth-child(even): 偶数
+
+	           :nth-last-child: 倒着查找, 用法和nth-child()一样
+
+	           E:nth-of-type(number): 查找相同类型的E元素, 他们是所在的父级的子元素下除去其它类型元素的第number个
+	           E:nth-last-of-type(number): 和上面用法一样, 只不过倒着数
+
+	           E:first-child = E:nth-child(1)
+	           E:last-child = E:nth-last-child(1)
+	           ( 下面几个下去自己测试 )
+	           :root 选择html
+	           E:only-child,  独生子标签会被选中并且标签名为E
+	           E:empty 空标签, 不能有子元素, 也不有内容
+	           :not(E) 否定伪类选择器
+	    -->
+    <div>
+        <p>aaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaa</p>
+        <h3>bbbbbbbbbbbbbbbb</h3>
+        <p>aaaaaaaaaaaaaaaa</p>
+        <h3>bbbbbbbbbbbbbbbb</h3>
+        <p></p>
+    </div>
+----------------------------------
+    <div>
+        <p>aaaaaaaaaaaaaaaa</p>
+        <h3>bbbbbbbbbbbbbbbb</h3>
+        <p>aaaaaaaaaaaaaaaa</p>
+        <h3>bbbbbbbbbbbbbbbb</h3>
+        <div>
+            <p>嵌套的p</p>
+        </div>
+    </div>
+
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+        <li>22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+        <li>28</li>
+        <li>29</li>
+        <li>30</li>
+    </ul>
+</body>
+</html>
+

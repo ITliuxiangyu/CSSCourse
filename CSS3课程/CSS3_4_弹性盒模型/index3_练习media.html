@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .div1 {
+            background: red;
+        }
+        .div2 {
+            background: orange;
+        }
+        .div3 {
+            background: deepskyblue;
+        }
+        .div4 {
+            background: yellow;
+        }
+
+
+        @media only screen and (min-width: 800px) {
+            div {
+                float: left;
+                width: 25%;
+                height: 200px;
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            div {
+                float: left;
+                width: 50%;
+                height: 50%;
+                /*
+                  设置阀值
+
+                 */
+                min-height: 200px;
+                min-width: 200px;
+            }
+
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+
+<!--
+    响应式编程: 根据不同屏幕尺寸, 布局不同的页面的编程方式
+
+    作法:
+    1. viewport适配不同分辨率的移动设备
+    2. 媒体查询, 根据不同的网页大小, 些不同的css
+    3. 字体不适用font-size, 适用em和rem
+    4. 宽高不给固定值, 适用百分比(大小参照父级大小)
+
+
+-->
+
+
+
+</body>
+</html>

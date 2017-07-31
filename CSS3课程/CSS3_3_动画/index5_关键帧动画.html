@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*定义一个关键帧动画名称*/
+        @keyframes myDemo {
+            0%{
+                background-color: green;
+                width: 100px;
+            }
+            50%{
+                background-color: blue;
+            }
+            100%{
+                background-color: yellow;
+                width: 800px;
+            }
+        }
+        div{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            animation-name: myDemo;
+            animation-duration: 2s;
+            /*动画延迟时间*/
+            /*animation-delay: 1s;*/
+
+            /*帧数保留状态*/
+            /*animation-fill-mode none默认状态 forwards停在最后一帧 backwards 有延迟时等待为第一帧 both是forwards backwards 结合*/
+
+            /*有延迟时等待为第一帧*/
+            /*animation-fill-mode: backwards;*/
+
+            /*保留最后一帧*/
+            /*animation-fill-mode: forwards;*/
+
+            /*循环次数*/
+            /*animation-iteration-count: infinite;*/
+
+            /*
+		          动画方向
+		          normal: 正方向
+		          reverse: 反方向
+		          alternate: 奇数次正方向, 偶数次反方向
+		          alternate-reverse: 奇数次反方向, 偶数次是正方向
+		        */
+            /*animation-direction: alternate;*/
+
+            /*animation-timing-function*/
+            /*animation-timing-function不仅可以是 ease ease-in等这些曲线还可以是跃进函数*/
+            /*animation-timing-function: ease;*/
+
+            animation-timing-function: steps(100,start);
+            /*animation-timing-function: step-start;//等同于steps（1,start） step-end==steps（1,end）*/
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		    div {
+		        width: 500px;
+		        height: 500px;
+		        background-image: url(img/1.jpg);
+		        background-repeat: no-repeat;
+		        border: 5px dotted #333;
+		        background-size: 100% 100%;
+		        /* 
+		              蒙板: 透明图片会遮盖我们的背景, 不透明的部分会透明
+		              常规的选区表现了一种操作趋向，即将对所选区域进行处理；而蒙板却相反，它是对所选区域进行保护，让其免于操作，而对非掩盖的地方应用操作
+		         */
+		        /* 蒙版图片的位置 */
+		        /*-webkit-mask-position: 250px 250px;*/
+		        -webkit-mask-image: url(img/1.png);
+		        -webkit-mask-repeat: no-repeat;
+		    }
+		</style>
+	</head>
+	<body>
+	    <div>
+	        
+	    </div>
+	</body>
+</html>

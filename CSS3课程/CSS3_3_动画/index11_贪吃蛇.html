@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贪吃蛇</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=yes" />
+    <style>
+        .row{
+            height: 10px;
+            /*background-color: #05b596;*/
+        }
+        #map{
+            border: solid 1px red;
+            margin: 30px auto;
+        }
+        .cell{
+            height: 10px;
+            width: 10px;    
+            border: 1px solid black;
+            box-sizing: border-box;
+            float: left;
+        }
+        .active {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>
+<script>
+    (function(){
+        //获取地图以便绘制方块
+        var mapDiv = document.getElementById('map');
+        //设置行和列的数量
+        var row = 20,column= 20;
+        //存放所有小div的数组
+        var mapArr = [];
+        //存放蛇的div数组
+        var snake = [];
+        //食物的位置
+        var foodX = 0,foodY = 0;
+        //蛇运动的速度
+        var speed = 200;
+        //蛇头当前的位置  默认为前三个div
+        var x = 0,y = 2;
+        // 蛇前进的方向
+        var direction = "right";
+        //防止连续按键
+        var flag = true;
+        mapDiv.style.width = column * 20 + "px";
+        for(var i = 0;i < row;i++){
+            var rowDiv = document.createElement('div');
+            rowDiv.className = "row";
+            mapDiv.appendChild(rowDiv);
+            var rowArr = [];
+            for (var j = 0;j < column;j++){
+                var cellDiv = document.createElement('div');
+                cellDiv.className = "cell";
+                rowDiv.appendChild(cellDiv);
+                rowArr.push(cellDiv);
+            }
+            mapArr.push(rowArr);
+        }
+        //创建小蛇 小蛇初始化在最开始的三个div上
+        for(var s = 0;s < 3;s++){
+            snake[s] = mapArr[0][s];
+            snake[s].className = 'cell active';
+        }
+        //创建一个随机的食物
+        function creatRandomFood() {
+            foodX = Math.floor(Math.random() * column);
+            foodY = Math.floor(Math.random() * row);
+            if(mapArr[foodX][foodY].className == "cell active"){
+                creatRandomFood();
+            }else {
+                mapArr[foodX][foodY].className = "cell active";
+            }
+        }
+        creatRandomFood();
+        //蛇运动的方法
+        function snakeMove() {
+            switch (direction){
+                case "right":
+                    y++;
+                    break;
+                    // 向左走
+                case "left":
+                    y--;
+                    break;
+
+                    // 向上走
+                case "up":
+                    x--;
+                    break;
+
+                    // 向下走
+                case "down":
+                    x++;
+                    break;
+
+                default:
+                    break;
+            }
+            // 判断蛇是否撞到了墙
+            if (x < 0 || x >= column || y < 0 || y >= row) {
+                clearInterval(timer);
+                alert("Game Over!");
+                return;
+            }
+            //判断蛇是否咬到自己
+            for (var k = 0;k < snake.length;k++){
+                if(mapArr[x][y] == snake[k]){
+                    clearInterval(timer);
+                    alert("Game Over!");
+                    return;
+                }
+            }
+            //判断是否咬到食物
+            if(x == foodX && y == foodY){
+                snake.push(mapArr[x][y]);
+                creatRandomFood();
+            }else {
+                //没有咬到食物蛇的尾巴那个div要去掉背景色
+                snake[0].className = "cell";
+                //蛇头前面的要变色
+                mapArr[x][y].className = "cell active";
+                //蛇自己要删除自己第一个元素
+                snake.shift();
+                //然后把蛇头前的div给蛇数组
+                snake.push(mapArr[x][y]);
+            }
+        }
+        //开启蛇移动的定时器
+        var timer = setInterval(snakeMove,speed);
+        //监听键盘事件
+        document.onkeydown = function (event) {
+            if (flag) {
+                flag = false;
+                timeout = setTimeout(function() {
+                    flag = true;
+                }, speed);
+            } else {
+                return;
+            }
+            // 特殊情况 防止蛇在向前动的时候按下反方向结束游戏
+            if (direction == "right" && event.keyCode == 37) {
+                return;
+            } else if (direction == "left" && event.keyCode == 39) {
+                return;
+            } else if (direction == "up" && event.keyCode == 40) {
+                return;
+            } else if (direction == "down" && event.keyCode == 38) {
+                return;
+            }
+            switch(event.keyCode) {
+                case 37:
+                    direction = "left";
+                    break;
+                case 38:
+                    direction = "up";
+                    break;
+                case 39:
+                    direction = "right";
+                    break;
+                case 40:
+                    direction = "down";
+                    break;
+                default:
+                    break;
+            }
+
+        }
+    })();
+</script>

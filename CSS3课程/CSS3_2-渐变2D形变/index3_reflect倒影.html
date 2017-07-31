@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒影</title>
+    <style>
+        p{
+            width: 500px;
+            height: 200px;
+            font-size: 100px;
+            text-align: center;
+            background-image: linear-gradient(to top right,transparent, red);
+            -webkit-box-reflect: right 30px linear-gradient(to top left, transparent,white);
+        }
+        img {
+            width: 300px;
+            margin-top: 30px;
+            -webkit-box-reflect: right 50px radial-gradient(circle, transparent 5%, transparent 20%, red );
+
+        }
+
+    </style>
+</head>
+<body>
+    <p>hello world</p>
+    <img src="img/dameizi.jpeg" alt="" />
+</body>
+</html>

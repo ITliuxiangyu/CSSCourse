@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>弹性盒子实现垂直水平居中</title>
+    <style type="text/css">
+
+        .demo {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            height: 300px;
+            width: 300px;
+            background-color: lavender;
+        }
+        /*实现文本垂直居中*/
+        .demo div:nth-child(1) {
+            display: flex;
+            align-items: center;
+        }
+
+
+        /*块居中*/
+        /*html,body{*/
+            /*height: 100%;*/
+        /*}*/
+        /*.demo{*/
+            /*display: flex;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+            /*height: 100%;*/
+            /*!*background-color: red;*!*/
+        /*}*/
+        /*.demo div:nth-child(1){*/
+            /*background-color: #34dec0;*/
+            /*display: flex;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+            /*height: 100px;*/
+            /*width: 100px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div>哈哈</div>
+    </div>
+</body>
+</html>

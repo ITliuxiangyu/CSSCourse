@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 300px;
+            height: 600px;
+            margin: 50px auto;
+            box-shadow: 10px 10px 10px gray;
+            border-radius: 30px;
+        }
+        div img{
+            width: 300px;
+            height: 600px;
+            position: absolute;
+            border-radius: 30px;
+            box-shadow: 10px 10px 10px gray;
+            transition: all 2s;
+            transform-origin: bottom center;
+        }
+        div:hover img:nth-child(1){
+            transform: rotate(40deg);
+        }
+        div:hover img:nth-child(2){
+            transform: rotate(30deg);
+        }
+        div:hover img:nth-child(3){
+            transform: rotate(20deg);
+        }
+        div:hover img:nth-child(4){
+            transform: rotate(10deg);
+        }
+        div:hover img:nth-child(5){
+            transform: rotate(0deg);
+        }
+        div:hover img:nth-child(6){
+            transform: rotate(-10deg);
+        }
+        div:hover img:nth-child(7){
+            transform: rotate(-20deg);
+        }
+        div:hover img:nth-child(8){
+            transform: rotate(-30deg);
+        }
+        div:hover img:nth-child(9){
+            transform: rotate(-40deg);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/5.jpg" alt="">
+        <img src="img/6.jpg" alt="">
+        <img src="img/7.jpg" alt="">
+        <img src="img/8.jpg" alt="">
+        <img src="img/9.jpg" alt="">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <button type="button" id="myButton" data-loading-text="登录中..." class="btn btn-primary" autocomplete="off">
+        登录
+    </button>
+
+
+
+
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input type="checkbox" autocomplete="off" checked> Checkbox 1 (pre-checked)
+        </label>
+        <label class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Checkbox 2
+        </label>
+        <label class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Checkbox 3
+        </label>
+    </div>
+
+    <!--单选-->
+    <div class="btn-group" data-toggle="button">
+        <label class="btn btn-primary active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
+        </label>
+    </div>
+
+</body>
+</html>
+<script src="dist/js/jquery.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script>
+    $('#myButton').on('click', function () {
+        var $btn = $(this).button('loading');
+        setTimeout(function () {
+            $btn.button('reset');
+        },2000);
+    })
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            font-size: 40px;
+            /*text-shadow  x偏移 y 偏移 模糊程度 阴影颜色 支持多个阴影
+            text-overflow clip剪切 ellipsis省略号， 必须配合 white-space overflow*/
+            text-shadow: -10px -10px 10px green ,10px 10px 5px red;
+            text-overflow: ellipsis;
+            width: 400px;
+            white-space: nowrap;
+            overflow: hidden;
+
+        }
+        @font-face {
+            font-family: myFont;
+            src: url("fonts/SingleMalta.ttf");
+
+        }
+        /*汉语必须用兼容汉语的字体库*/
+        div:hover{
+            overflow: visible;
+            font-family: myFont;
+        }
+    </style>
+</head>
+<body>
+
+    <div>昔年八月十五夜，西北古城望郑州</div>
+    <div>can you can can a can as a can-ner can a can-can you can can a can as a can-ner can a can</div>
+</body>
+</html>

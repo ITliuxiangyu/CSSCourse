@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gradient渐变</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*
+        渐变
+        1. 至少两种颜色
+        2. CSS3中以背景图片的形式出现
+        3. (终点, 颜色1 渐变的位置1, 颜色2, 颜色3...颜色n 位置n)
+        注: 位置可以是px, 也可以是百分比
+        4. 终点可以是: to right, to left, to top, to bottom, to top right, to top left, to bottom left, to bottom right
+        5. 终点可以是角度(deg), 可以是正值, 也可以是赋值, 0deg效果是to top, 正值按照0deg位置顺时针转动, 负值逆时针转动
+        */
+        .linear1{
+            height: 150px;
+            width: 150px;
+            margin: 0 auto;
+            background-image: linear-gradient(to top right,red, green, yellow, orange, skyblue);
+        }
+        .linear2{
+            width: 150px;
+            margin: 10px auto;
+            height: 150px;
+            /*终点可以是角度(deg), 可以是正值, 也可以是赋值, 0deg效果是to top, 正值按照0deg位置顺时针转动, 负值逆时针转动*/
+            background-image: linear-gradient(10deg,red,white,black);
+        }
+        .linear3{
+            width: 150px;
+            margin: 10px auto;
+            height: 150px;
+            /*颜色后面可以设置该颜色渐变在视图上的位置,可以是百分百也可以是px*/
+            background-image: linear-gradient(0deg,red -30%,white 70px,black);
+        }
+        .button {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 50px;
+            /*		         line-height: 300px;*/
+            text-align: center;
+            font: 50px/300px "翩翩体-简";
+            background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-image: linear-gradient(to top left, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+        }
+
+        /*
+        径向渐变:
+        (半径 形状 at 圆心, 颜色1 位置1, ...., 颜色n 位置n)
+
+        1. 默认形状是ellipse(椭圆), 在中心
+        ellipse(椭圆)
+        circle(圆形)
+        2. 半径:
+         半径大小
+         farthest-side: 圆心到最远边
+         farthest-corner: 圆心到最远角
+         closest-side: 圆心到最近的边
+         closest-corner: 圆心到最近的角
+        3. 圆心
+        左上(top left)
+        左下(bottom left)
+        右上(top right)
+        右下(bottom right)
+        也可写数值(xpx, ypx)*/
+        .radial{
+            width: 300px;
+            height: 200px;
+            background-image: radial-gradient(farthest-corner ellipse at 150px 100px,red 10%,yellow 50%,blue);
+        }
+        .one {
+            width: 800px;
+            height: 200px;
+            background-image: repeating-linear-gradient(to right, red, yellow 100px);
+        }
+
+        .two {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            margin: 100px auto;
+            background-image: repeating-radial-gradient(circle, red, blue 100px);
+        }
+
+        /*.three {*/
+            /*width: 300px;*/
+            /*height: 300px;*/
+            /*margin: 100px auto;*/
+            /*background-image: repeating-linear-gradient(to left, rgba(255, 0, 0, 0.3) 0%, rgba(255, 0, 0, 0.3) 10%, transparent 10%, transparent 20% ),  repeating-linear-gradient(to top, rgba(255, 0, 0, 0.3) 0%, rgba(255, 0, 0, 0.3) 10%, transparent 10%, transparent 20%);*/
+        /*}*/
+        .three{
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            background-image: repeating-linear-gradient(to top, rgba(2, 2, 0, 0.1) 0%, rgba(25, 0, 0, 0.1) 7%, transparent 7%, transparent 15%);
+            /*background-image: repeating-linear-gradient(to bottom, rgba(255, 255, 0, 0.1) 0%, rgba(122, 12, 0, 1) 10%);*/
+        }
+    </style>
+</head>
+<body>
+
+    <div class="linear1"></div>
+    <div class="linear2"></div>
+    <div class="linear3"></div>
+    <div class="button"></div>
+
+    <div class="radial"></div>
+
+
+    <!--
+        重复渐变:
+           内容不能铺满才有重复渐变效果
+        
+    -->
+    <div class="one"></div>
+    <div class="two"></div>
+    
+    <div class="three"></div>
+</body>
+</html>

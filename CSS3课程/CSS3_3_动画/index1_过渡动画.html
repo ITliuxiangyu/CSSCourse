@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div{
+            width: 200px;
+            height: 300px;
+            background-color: red;
+            margin: 100px auto;
+            /*transition-property: background-color , width ,height,transform,border-radius,box-shadow;*/
+            /*作用于动画的属性*/
+            transition-property: all;
+            transition-duration: 1s;
+            /*等待时间*/
+            transition-delay: 0s;
+            /*转场效果*/
+            transition-timing-function: ease;
+        }
+        div:nth-child(1):hover{
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            box-shadow: 0 0 50px 50px yellow;
+            background-color: blueviolet;
+            transform: rotate(2400deg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div></div>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多媒体查询</title>
+    <style>
+        /*一般浏览器最小能缩小到400px*/
+        @media screen and (max-width: 600px){
+            body{
+                background-color: red;
+            }
+        }
+        @media screen and (min-width: 600px) and (max-width: 800px){
+            body{
+                background-color: #05b596;
+            }
+        }
+        /*
+               媒体查询:
+                语法:
+                   @media and|only|not mediatype and (expressions) and..... {
+                       CSS 代码
+                   }
+
+                   mediatype: 媒体类型包含 screen(电脑, ipad, 手机), speech(阅读器设备), print(打印设备), all(所有设备)
+
+                   and screen: 支持电脑, ipad, 手机(and可以省略)
+                   only screen: 仅支持电脑, ipad, 手机
+                   not print: 非打印设备
+
+                   expressions: 条件, 比如: max-width: 500px;
+
+
+            */
+    </style>
+</head>
+<body>
+
+</body>
+</html>

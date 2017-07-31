@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>景深效果</title>
+    <style>
+        .content{
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+            background:url("img/bg-grid.jpg") no-repeat;
+            background-size: 100% 100%;
+
+            /*景深效果*/
+            /*从哪个视角看景深*/
+            /*perspective-origin: 0 0;*/
+            perspective-origin: left top;
+            /*景深开始的位置*/
+            perspective: 10px;
+
+        }
+        .content img{
+            width: 100px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top:0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+        .content img:last-child{
+            transform: rotateX(30deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <img src="img/cardKingClub.png">
+        <img src="img/cardKingClub.png">
+    </div>
+</body>
+</html>

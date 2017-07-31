@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/animate.css" />
+		<style>
+		    * {
+		        margin: 0;
+		        padding: 0;
+		    }
+		    .one {
+		        width: 200px;
+		        height: 200px;
+		        background: red;
+		        margin: 100px auto 0;
+		    }
+		    .two {
+		        width: 200px;
+		        height: 200px;
+		        background: yellow;
+		        margin: 100px auto 0;
+		        
+		    }
+			.one:hover{
+				animation: shake 1s;
+			}
+		    .two:hover {
+		        animation: bounceOut 0.75s infinite;
+		    }
+		</style>
+	</head>
+	<body>
+	    <!--
+	        animate.css是一个强大的第三方动画库, 里面写好很多强大的动画效果, 我们可以直接拿来使用
+	    -->
+	    <div class="one animated bounceIn"></div>
+	    <div class="two"></div>
+	</body>
+
+</html>

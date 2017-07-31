@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性容器</title>
+    <style>
+        .demo1{
+            /*设为Flex布局以后，子元素的float、clear和vertical-align属性将失效*/
+            /*采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"*/
+            display: flex;/*默认的布局方向就是从左到右*/
+            /*flex-direction设置item弹性布局的方向
+		      row: 默认值, 沿主轴方向从左向右, 起点是main-start
+		      row-reverse, 沿主轴方向从右向左, 起点是main-end
+		      column: 沿交叉轴(方向从上到下, 和主轴垂直)从上到下排列, 起点是cross-start
+		      column-reverse: 沿交叉轴从下到上排列, 提点是cross-end
+		        */
+            flex-direction: column;
+            /*换行:nowrap: 不换行
+		          wrap: 换行
+		          wrap-reverse: 换行, 并且第一排元素在下边显示
+		        */
+            /*flex-wrap: wrap;*/
+            /*!*flex-direction和flex-wrap的简写形式*!*/
+            /*flex-flow: row wrap-reverse;*/
+
+            /*item的排布
+		      flex-start: 按照轴(主轴或者交叉轴)的起点进行排列
+		      flex-end: item排列方向不变, 但是最后一个item的末端和轴(主轴或者交叉轴)的终点相邻
+              center: item位于主轴的中点
+              space-around: item(弹性容器的子元素)左右的间距一样
+		      space-between: item两端和容器两端相邻, item之间的间距相等
+		        */
+            justify-content: center;
+            /*不考略flex-direction的话, align-items属性是指item沿着交叉轴排布的情况
+		         flex-start: item的起点是交叉轴的起点
+		         flex-end: item的起点是交叉轴的终点
+		         center: item位于交叉轴的中点
+		         baseline: 基线对齐
+		         stretch: 在item没有设置高度的时候, 会被拉伸撑满父级*/
+            height: 3000px;
+            align-items: center;
+            /*align-content控制上下排布
+                  flex-start: 主轴排布从交叉轴的起点开始
+		          flex-end: 主轴排布在交叉轴的终点位置
+		          center: 主轴排布在交叉轴的中点
+		          space-around: 主轴的上下间距相等
+		          space-between: 两端对齐
+		          stretch: 拉伸, 主轴平分容器空间
+		       注意: 该属性只有在有多条主轴的时候才会生效*/
+            align-content: flex-end;
+        }
+
+        .demo1 div{
+            float: right;
+            background-color: #20c8aa;
+            /*width: 100px;*/
+            /*height: 100px;*/
+            margin-left: 5px;
+            /*clear: right;*/
+        }
+        .demo1 img{
+            float: right;
+            background-color: rosybrown;
+            width: 100px;
+            height: 100px;
+            /*vertical-align: text-bottom;*/
+        }
+    </style>
+</head>
+<body>
+    <div class="demo1">
+        <div>aaaaaaa</div>
+        <img src="怪异盒和标准盒子.png">
+        <div>bbbbbbbb</div>
+        <div>ccccccc</div>
+        <div>dddddddd</div>
+        <div>eeeeeeee</div>
+        <div>ffffffff</div>
+        <div>hhhhhhhh</div>
+    </div>
+</body>
+</html>

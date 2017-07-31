@@ -1,0 +1,83 @@
+#box {
+    height: 100%;
+}
+
+.content {
+    margin-left: 15%;
+    margin-right: 15%;
+    width: auto;
+    /*background: yellow;*/
+}
+
+.center div:first-child img:nth-child(odd) {
+    width: 62.177%;
+}
+.center div:first-child img:nth-child(even) {
+    width: 36.994%;
+}
+
+.center div:last-child img:nth-child(even) {
+    width: 62.177%;
+}
+.center div:last-child img:nth-child(odd) {
+    width: 36.994%;
+}
+
+.center div img {
+    height: 33.016%;
+}
+
+.center div img:nth-child(3) {
+    margin: 0.476% 0;
+}
+
+
+.center div img:nth-child(4) {
+    margin: 0.476% 0;
+}
+
+.content {
+    position: relative;
+    height: 100%;
+}
+
+.center {
+    position: absolute;
+    top: 19.184%;
+    height: 69.79%;
+}
+
+.center div {
+    height: 49.50%;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 2.205%;
+}
+
+.bottom img {
+    width: 100%;
+}
+
+.top {
+    height: 9.0407%;
+    /*background: red;*/
+    position: relative;
+    top: 6.6152%;
+}
+
+.top img:first-child {
+    width: 30%;
+    margin-right: 70%;
+    height: 50%;
+}
+
+.top img:last-child {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 40%;
+    width: 50%;
+    
+}

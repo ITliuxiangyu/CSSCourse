@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D形变</title>
+    <style>
+        .content{
+            margin: 100px auto 0;
+            width: 400px;
+            height: 400px;
+            background-image: url("img/bg-grid.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+        .content img{
+            top:0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+            width: 100px;
+            height: 150px;
+        }
+        .content img:first-child{
+            opacity: .7;
+        }
+        .content img:last-child{
+            /*3D转换:
+            transform-style:
+            变化类型, 默认flat(2D), 要想看到3D效果, 值要写成preserve-3d
+            transform: rotate3d(bool, bool, bool, angle);
+            bool: 1代表绕该轴旋转, 0代表不旋转
+            */
+            transform-style: preserve-3d;
+            transform: rotate3d(0,0,1,45deg);
+            /*transform: translateZ(100px);*/
+        }
+        .box{
+            transform-style: preserve-3d;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            /*让三个div都倾斜*/
+            transform: rotateY(-45deg) rotateX(-45deg);
+        }
+        .box div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /*不写绝对定位不在一起*/
+            position: absolute;
+        }
+        .box div:first-child{
+            background-color: yellow;
+            /*translateZ是面向自己的*/
+            transform: translateZ(100px);
+        }
+        .box div:nth-child(2){
+            background-color: green;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .box div:last-child{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <img src="img/cardKingClub.png" alt="">
+    <img src="img/cardKingClub.png" alt="">
+</div>
+
+<div class="box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3选择器详解</title>
+    <style>
+        /*通配符属性选择器*/
+        /*
+            *代表包含的意思
+        */
+        /*[id*=div]{*/
+            /*color: red;*/
+        /*}*/
+        /* ^代表只有首字符是后面参数的才能生效 */
+        /*[id^=w]{*/
+            /*color: blue;*/
+        /*}*/
+        /* $ 代表结束字符符合的才能生效*/
+        /*[id$=y]{*/
+            /*color: blueviolet;*/
+        /*}*/
+        /*~=选择具有attr属性, 并且该属性值中包含参数值的E标签 元素属性为多个*/
+        [id~=div]{
+            color: aquamarine;
+        }
+        /*|选择具有attr属性, 只包含值val 或者 包含该值以val开头并且后面内容和val以-分割的E标签*/
+        [id|=val]{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">示例文本1</div>
+    <div id="div2">示例文本2</div>
+    <div id="div3">示例文本3</div>
+    <div id="my">示例文本4</div>
+    <div id="wdiv4">示例文本5</div>
+    <div id="divd divs div">示例文本6</div>
+    <div id="val">示例文本7</div>
+    <div id="val-1">示例文本7</div>
+</body>
+</html>

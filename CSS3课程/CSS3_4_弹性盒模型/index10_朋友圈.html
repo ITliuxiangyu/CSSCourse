@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>朋友圈</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            height: 50px;
+            background-color: #333333;
+            left: 0;
+            right: 0;
+            position: fixed;
+            display: flex;
+            /*width: 100%;*/
+        }
+        header div{
+            color: white;
+            line-height: 50px;
+            flex: 1;
+            text-align: center;
+        }
+        header div:nth-child(2){
+            /*中间的占八份*/
+            flex: 8;
+        }
+        footer{
+            display: flex;
+            position: fixed;
+            height: 50px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            border-top: solid 1px #333333;
+        }
+        footer div{
+            text-align: center;
+            /*等分底部宽度*/
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div><</div>
+        <div>我的朋友圈</div>
+        <div>
+            <i class="fa fa-phone"></i>
+        </div>
+        <div>
+            <i class="fa fa-user"></i>
+        </div>
+    </header>
+    <div class="content">
+
+    </div>
+    <footer>
+        <div>
+            <i class="fa fa-comment-o"></i>
+            <p>消息</p>
+        </div>
+        <div>
+            <i class="fa fa-user"></i>
+            <p>联系人</p>
+        </div>
+        <div>
+            <i class="fa fa-star"></i>
+            <p>动态1</p>
+        </div>
+        <div>
+            <i class="fa fa-star"></i>
+            <p>动态2</p>
+        </div>
+        <div>
+            <i class="fa fa-star"></i>
+            <p>动态3</p>
+        </div>
+    </footer>
+</body>
+</html>

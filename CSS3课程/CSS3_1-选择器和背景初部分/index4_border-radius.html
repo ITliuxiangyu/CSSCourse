@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border-radius</title>
+    <style>
+        /*不规则边框*/
+        #div1{
+            height:200px;
+            width: 200px;
+            border: dashed 6px blue;
+            border-radius: 20px 50px 100px 200px;
+        }
+        /*圆形*/
+        #div2{
+            height: 200px;
+            width:200px;
+            border: solid 3px red;
+            border-radius: 100px;
+        }
+        /*半圆*/
+        #div3{
+            height: 150px;
+            width: 300px;
+            background-color: aqua;
+            border-radius: 150px 150px 0 0 ;
+        }
+        /*扇形*/
+        #div4{
+            height: 200px;
+            width: 200px;
+            background-color: darkmagenta;
+            border-top-left-radius: 200px;
+        }
+        #div5{
+            height: 100px;
+            width: 200px;
+            background-color: darkorange;
+            /* / 代表左右的半径 第一组值表示水平半径，第二组值表示垂直半径*/
+            /*两个直是上下，左右
+三个是 上，左右，下
+四个是 上 ，右，下，左*/
+            border-radius: 30px 100px 100px 10px / 30px 100px 100px 10px;
+        }
+        /*
+        box-shadow: 盒子阴影
+        第一个参数: x偏移距离
+        第二个参数: y偏移距离
+        第三个参数: 模糊程度(发散度)
+        第四个参数: 阴影半径
+        第五个参数: 阴影颜色
+        */
+        .first{
+            width: 100px;
+            height: 100px;
+            margin-top: 30px;
+            margin-left: 30px;
+            background-color: aqua;
+            /*0 0 x y偏移量 100px代表模糊度 20px模糊范围*/
+            box-shadow: 0 0 100px 20px yellow;
+        }
+        .second{
+            margin-left: 100px;
+            width: 100px;
+            height: 100px;
+            background: blue;
+            border: 5px solid red;
+            box-shadow:  -10px 0 10px 0 yellow;
+        }
+        .third {
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            background: blue;
+            box-shadow:
+                    0 0 5px 10px red,
+                    0 0 5px 20px yellow,
+                    0 0 5px 30px green;
+        }
+        .forth {
+            width: 200px;
+            height: 200px;
+            margin: 10px auto;
+            /*background: blue;*/
+            border: 1px solid darkgray;
+            border-radius: 10px;
+            /* inset: 设置内阴影, 参数效果和外阴影效果一样 */
+            box-shadow: 5px 5px 5px 0 #999 inset;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+
+    <div id="div2">
+
+    </div>
+
+    <div id="div3">
+
+    </div>
+    <div id="div4">
+
+    </div>
+    <div id="div5">
+
+    </div>
+
+
+    <div class="first">
+
+    </div>
+    <br>
+    <br>
+
+    <div class="second">
+
+    </div>
+
+    <div class="third">
+
+    </div>
+
+    <div class="forth">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* 空格子类选择器*/
+        div p{
+            color: red;
+        }
+        /* ~选择同级元素*/
+        .firstP~h3{
+            color: royalblue;
+        }
+        /*同级相邻兄弟选择器*/
+        .firstP+h4{
+            color: aqua;
+        }
+        /*伪类选择器*/
+        /*给可输入框添加样式*/
+        input:focus{
+            background-color: chartreuse;
+        }
+        /*给禁用的输入框添加样式*/
+        input:disabled{
+            background-color: darkgray;
+        }
+        /*伪元素选择器 为了区分伪类用:: 以前和伪类是一样也是:*/
+        /*给元素的前面添加内容*/
+        .testP::before{
+            content: "I";
+        }
+        .testP::after{
+            content: "You";
+        }
+        /*给元素的第一个字符添加样式*/
+        .lineP::first-letter{
+            font-size: 30px;
+        }
+        .lineP{
+            width: 80px;
+        }
+        /*给元素的第一行添加样式*/
+        .lineP::first-line{
+            color: aquamarine;
+        }
+        /*目标伪类选择器*/
+        p:target{
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <!--<div>-->
+        <p class="firstP">aaaaaaaaaaaaa</p>
+        <h4>hhhhhhhhhhhhhh</h4>
+        <h3>轻轻去去去去去去</h3>
+        <p>bbbbbbbbbbbbb</p>
+        <h3>ccccccccccccc</h3>
+        <p>ddddddddddddd</p>
+        <div>
+            <span>eeeeeeeeeeee</span>
+        </div>
+    <!--</div>-->
+
+    <!--
+	    伪类选择器
+	    autofocus: 自动选中(聚焦)
+	    disabled: 禁用-->
+    <input type="text" autofocus />
+    <input type="text"  />
+    <input type="text" disabled />
+
+    <!-- 伪元素选择器 -->
+    <p class="testP"> Love</p>
+    <p class="lineP">
+        你好, 中国, 伟大的祖国!
+    </p>
+    <p id="top1">锚点</p>
+    <a href="#top1">跳过去</a>
+</body>
+</html>

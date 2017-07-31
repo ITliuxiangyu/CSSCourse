@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D形变</title>
+    <style>
+        .content{
+            margin: 100px auto 0;
+            width: 400px;
+            height: 400px;
+            background-image: url("img/bg-grid.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+        .content img{
+            top:0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+            width: 100px;
+            height: 150px;
+        }
+        .content img:first-child{
+            opacity: .7;
+        }
+        .content img:last-child{
+            /*
+	       2D形变:
+	       translate: 平移
+	           translateX(): X轴方向平移
+	           translateY(): Y轴方向平移
+	           简单写法: translate(xpx, ypx)
+	       scale: 缩放
+	           scaleX(): x方向在中心位置缩放的系数
+	           scaleY(): y方向在中心位置缩放的系数
+	           简单写法: scale(x, y)
+	           系数为正: 直接放大缩小
+	           系数为负: 先翻转再放大缩小
+	        skew: 倾斜
+	           skewX(angle): 沿X轴方向倾斜
+	           skewY(angle): 沿y轴方向倾斜
+	           简单写法:
+	               skew(x-angle, y-angle)
+	        rotate: 旋转
+	           rotate(angle): 按照z轴顺时针旋转, 默认以中心为原点进行旋转
+            */
+            /*transform: translateX(20px) translateY(5px);*/
+            /*transform: scale(.5,.5);*/
+            /*transform: skewX(20deg) skewY(30deg);*/
+            /* 以哪个点为基点进行旋转 */
+            /*transform-origin: 100px 100px;*/
+            transform: rotate(30deg);
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <img src="img/cardKingClub.png" alt="">
+        <img src="img/cardKingClub.png" alt="">
+    </div>
+
+
+</body>
+</html>
